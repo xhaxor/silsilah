@@ -48,7 +48,7 @@
                                     <div class="entry {{ $childsCount == 1 ? 'sole' : '' }}">
                                         <span
                                             class="label">{{ link_to_route('users.tree', $child->name, [$child->id], ['title' => $child->name . ' (' . $child->gender . ')']) }}
-                                            @if ($user->gender == 'F')
+                                            @if ($child->gender == 'F')
                                                 <img src="{{ asset('images/female.png') }}" style="float: left;">
                                             @else
                                                 <img src="{{ asset('images/male.png') }}" style="float: left;">
@@ -68,7 +68,9 @@
                                                     <div class="entry {{ count($data2) == 1 ? 'sole' : '' }}">
                                                         <span
                                                             class="label2">{{ link_to_route('users.tree', $pasanganchild->name, [$pasanganchild->id], ['title' => $pasanganchild->name . ' (' . $pasanganchild->gender . ')']) }}
+
                                                             @if ($pasanganchild->gender == 'F')
+                                                            
                                                                 <img src="{{ asset('images/female.png') }}"
                                                                     style="float: left;">
                                                             @else
@@ -124,7 +126,7 @@
                                                                                                         class="entry {{ $GrandCouplechildsCount == 1 ? 'sole' : '' }}">
                                                                                                         <span
                                                                                                             class="label">{{ link_to_route('users.tree', $GrandCouplechilds->name, [$GrandCouplechilds->id], ['title' => $GrandCouplechilds->name . ' (' . $GrandCouplechilds->gender . ')']) }}
-                                                                                                            @if ($CoupleChild->gender == 'F')
+                                                                                                            @if ($GrandCouplechilds->gender == 'F')
                                                                                                                 <img src="{{ asset('images/female.png') }}"
                                                                                                                     style="float: left;">
                                                                                                             @else
