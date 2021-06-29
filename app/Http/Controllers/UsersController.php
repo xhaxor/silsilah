@@ -88,23 +88,23 @@ class UsersController extends Controller
         ));
     }
 
-    /**
-     * Show user family tree.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\View\View
-     */
     public function tree(User $user)
     {
-        return view('users.tree', compact('user'));
-    }
 
-    /**
-     * Show user death info.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\View\View
-     */
+            if ($user->gender_id == 1) 
+            {
+                $data = $user->wifes;
+             
+            }
+            else
+            {
+                $data = $user->husbands;
+               
+            }
+
+        return view('users.tree', compact('user','data'));
+    }
+    
     public function death(User $user)
     {
         $mapZoomLevel = config('leaflet.detail_zoom_level');

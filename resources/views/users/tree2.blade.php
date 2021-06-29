@@ -4,52 +4,44 @@
 
 @section('user-content')
 
-<div class="tree">
+<div class="familytree">
     <ul>
-        <li>
-            {{ link_to_route('users.tree', $user->name, [$user->id], ['title' => $user->name.' ('.$user->gender.')']) }}
-            @if ($user->childs->count())
+      <li>
+        <a href="#">Parent</a>
+        <ul>
+          <li>
+            <a href="#">Child</a>
             <ul>
-                @foreach($user->childs as $child)
-                <li>
-                    {{ link_to_route('users.tree', $child->id, [$child->id], ['title' => $child->name.' ('.$child->gender.')']) }}
-                    @if ($child->childs->count())
-                    <ul>
-                        @foreach($child->childs as $grand)
-                        <li>
-                            {{ link_to_route('users.tree', $grand->id, [$grand->id], ['title' => $grand->name.' ('.$grand->gender.')']) }}
-                            @if ($grand->childs->count())
-                            <ul>
-                                @foreach($grand->childs as $gg)
-                                <li>
-                                    {{ link_to_route('users.tree', $gg->id, [$gg->id], ['title' => $gg->name.' ('.$gg->gender.')']) }}
-                                    <?php /*
-                                    @if ($gg->childs->count())
-                                    <ul>
-                                        @foreach($gg->childs as $ggc)
-                                        <li>
-                                            {{ link_to_route('users.tree', $ggc->id, [$ggc->id], ['title' => $ggc->name.' ('.$ggc->gender.')']) }}
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                    @endif
-                                    */ ?>
-                                </li>
-                                @endforeach
-                            </ul>
-                            @endif
-                        </li>
-                        @endforeach
-                    </ul>
-                    @endif
-                </li>
-                @endforeach
+              <li>
+                <a href="#">Grand Child</a>
+              </li>
             </ul>
-            @endif
-        </li>
+          </li>
+          <li>
+            <a href="#">Child</a>
+            <ul>
+              <li><a href="#">Grand Child</a></li>
+              <li>
+                <a href="#">Grand Child</a>
+                <ul>
+                  <li>
+                    <a href="#">Great Grand Child</a>
+                  </li>
+                  <li>
+                    <a href="#">Great Grand Child</a>
+                  </li>
+                  <li>
+                    <a href="#">Great Grand Child</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Grand Child</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
-    <div class="clearfix"></div>
-</div>
+  </div>
 @endsection
 
 @section ('ext_css')
