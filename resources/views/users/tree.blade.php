@@ -61,7 +61,7 @@
                                                 $data2 = $child->husbands;
                                             }
                                         @endphp
-                                        @if ($pchildsCount = $child->wifes->count() or $pchildsCount = $child->wifes->count())
+                                        @if ($pchildsCount = $child->wifes->count() or $pchildsCount = $child->husbands->count())
                                             <?php $pchildsTotal += $pchildsCount; ?>
                                             <div class="branch lv3">
                                                 @foreach ($data2 as $pasanganchild)
