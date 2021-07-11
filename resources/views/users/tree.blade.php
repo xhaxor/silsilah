@@ -61,7 +61,7 @@
                                                 $data2 = $child->husbands;
                                             }
                                         @endphp
-                                        @if ($pchildsCount = $child->wifes->count())
+                                        @if ($pchildsCount = $child->wifes->count() or $pchildsCount = $child->wifes->count())
                                             <?php $pchildsTotal += $pchildsCount; ?>
                                             <div class="branch lv3">
                                                 @foreach ($data2 as $pasanganchild)
@@ -102,7 +102,7 @@
                                                                                 $data3 = $CoupleChild->husbands;
                                                                             }
                                                                         @endphp
-                                                                        @if ($GrandchildsCount = $CoupleChild->wifes->count())
+                                                                        @if ($GrandchildsCount = $CoupleChild->wifes->count() or $GrandchildsCount = $CoupleChild->husbands->count())
                                                                             <?php $GrandchildsTotal += $GrandchildsCount; ?>
                                                                             <div class="branch lv5">
                                                                                 @foreach ($data3 as $Grandchilds)
@@ -141,7 +141,7 @@
                                                                                                                 $data4 = $GrandCouplechilds->husbands;
                                                                                                             }
                                                                                                         @endphp
-                                                                                                        @if ($GrandGrandChildsCount = $GrandCouplechilds->wifes->count())
+                                                                                                        @if ($GrandGrandChildsCount = $GrandCouplechilds->wifes->count() or $GrandGrandChildsCount = $GrandCouplechilds->husbands->count())
                                                                                                             <?php $GrandGrandchildsTotal +=  $GrandGrandChildsCount; ?>
                                                                                                             <div
                                                                                                                 class="branch lv7">
@@ -181,7 +181,7 @@
                                                                                                                                                 $data5 = $GreatGrandCouplechilds->husbands;
                                                                                                                                             }
                                                                                                                                         @endphp
-                                                                                                                                        @if ($GreatGrandGrandChildsCount = $GreatGrandCouplechilds->wifes->count())
+                                                                                                                                        @if ($GreatGrandGrandChildsCount = $GreatGrandCouplechilds->wifes->count() or $GreatGrandGrandChildsCount = $GreatGrandCouplechilds->husbands->count())
                                                                                                                                             <?php $GreatGrandGrandchildsTotal +=  $GreatGrandGrandChildsCount; ?>
                                                                                                                                             <div class="branch lv9">
                                                                                                                                                 @foreach ($data5 as $GreatGrandGrandchilds)
