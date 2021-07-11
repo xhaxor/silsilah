@@ -61,7 +61,7 @@
                                                 $data2 = $child->husbands;
                                             }
                                         @endphp
-                                        @if ($pchildsCount = $child->childs->count())
+                                        @if ($pchildsCount = $child->wifes->count())
                                             <?php $pchildsTotal += $pchildsCount; ?>
                                             <div class="branch lv3">
                                                 @foreach ($data2 as $pasanganchild)
@@ -81,7 +81,7 @@
                                                         @if ($CouplechildsCount = $pasanganchild->childs->count())
                                                             <?php $CouplechildsTotal += $CouplechildsCount;
                                                             ?>
-                                                            <div class="branch lv3">
+                                                            <div class="branch lv4">
                                                                 @foreach ($pasanganchild->childs as $CoupleChild)
                                                                     <div
                                                                         class="entry {{ $CouplechildsCount == 1 ? 'sole' : '' }}">
@@ -102,9 +102,9 @@
                                                                                 $data3 = $CoupleChild->husbands;
                                                                             }
                                                                         @endphp
-                                                                        @if ($GrandchildsCount = $CoupleChild->childs->count())
+                                                                        @if ($GrandchildsCount = $CoupleChild->wifes->count())
                                                                             <?php $GrandchildsTotal += $GrandchildsCount; ?>
-                                                                            <div class="branch lv4">
+                                                                            <div class="branch lv5">
                                                                                 @foreach ($data3 as $Grandchilds)
                                                                                     <div
                                                                                         class="entry {{ count($data3) == 1 ? 'sole' : '' }}">
@@ -120,7 +120,7 @@
                                                                                         </span>
                                                                                         @if ($GrandCouplechildsCount = $Grandchilds->childs->count())
                                                                                             <?php $GrandCouplechildsTotal += $GrandCouplechildsCount; ?>
-                                                                                            <div class="branch lv5">
+                                                                                            <div class="branch lv6">
                                                                                                 @foreach ($Grandchilds->childs as $GrandCouplechilds)
                                                                                                     <div
                                                                                                         class="entry {{ $GrandCouplechildsCount == 1 ? 'sole' : '' }}">
@@ -141,10 +141,10 @@
                                                                                                                 $data4 = $GrandCouplechilds->husbands;
                                                                                                             }
                                                                                                         @endphp
-                                                                                                        @if ($GrandGrandChildsCount = $GrandCouplechilds->childs->count())
+                                                                                                        @if ($GrandGrandChildsCount = $GrandCouplechilds->wifes->count())
                                                                                                             <?php $GrandGrandchildsTotal +=  $GrandGrandChildsCount; ?>
                                                                                                             <div
-                                                                                                                class="branch lv6">
+                                                                                                                class="branch lv7">
                                                                                                                 @foreach ($data4 as $GrandGrandchilds)
                                                                                                                     <div
                                                                                                                         class="entry {{ count($data4) == 1 ? 'sole' : '' }}">
@@ -160,7 +160,7 @@
                                                                                                                         </span>
                                                                                                                         @if ($GreatGrandCouplechildsCount = $GrandGrandchilds->childs->count())
                                                                                                                             <?php $GreatGrandCouplechildsTotal += $GreatGrandCouplechildsCount; ?>
-                                                                                                                            <div class="branch lv7">
+                                                                                                                            <div class="branch lv8">
                                                                                                                                 @foreach ($GrandGrandchilds->childs as $GreatGrandCouplechilds)
                                                                                                                                     <div
                                                                                                                                         class="entry {{ $GreatGrandCouplechildsCount == 1 ? 'sole' : '' }}">
@@ -181,10 +181,9 @@
                                                                                                                                                 $data5 = $GreatGrandCouplechilds->husbands;
                                                                                                                                             }
                                                                                                                                         @endphp
-                                                                                                                                        @if ($GreatGrandGrandChildsCount = $GreatGrandCouplechilds->childs->count())
+                                                                                                                                        @if ($GreatGrandGrandChildsCount = $GreatGrandCouplechilds->wifes->count())
                                                                                                                                             <?php $GreatGrandGrandchildsTotal +=  $GreatGrandGrandChildsCount; ?>
-                                                                                                                                            <div
-                                                                                                                                                class="branch lv8">
+                                                                                                                                            <div class="branch lv9">
                                                                                                                                                 @foreach ($data5 as $GreatGrandGrandchilds)
                                                                                                                                                     <div
                                                                                                                                                         class="entry {{ count($data5) == 1 ? 'sole' : '' }}">
